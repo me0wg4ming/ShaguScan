@@ -160,7 +160,12 @@ end
 ui.CreateBar = function(parent, guid)
   local frame = CreateFrame("Button", nil, parent)
   frame.guid = guid
-
+  
+  -- Check if the unit has PvP enabled and play sound
+  if UnitIsPVP(frame.guid) then
+    PlaySoundFile("Interface\\AddOns\\ShaguScan\\sounds\\detected-nearby.wav", "Master")  -- Make sure you have this sound file
+  end
+  
   -- assign required events and scripts
   frame:RegisterEvent("UNIT_COMBAT")
   frame:SetScript("OnEvent", ui.BarEvent)
