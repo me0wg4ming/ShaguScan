@@ -1,5 +1,8 @@
 if ShaguScan.disabled then return end
 
+ShaguScan_db = ShaguScan_db or {}
+ShaguScan_db.soundalert = ShaguScan_db.soundalert ~= false -- default ON
+
 local utils = ShaguScan.utils
 
 local settings = {}

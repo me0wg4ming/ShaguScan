@@ -185,6 +185,9 @@ ui.CreateBar = function(parent, guid)
   text:SetFont(STANDARD_TEXT_FONT, 9, "THINOUTLINE")
   text:SetJustifyH("LEFT")
   frame.text = text
+  if ShaguScan_db.soundalert then
+  PlaySoundFile("Interface\\AddOns\\ShaguScan\\detected-nearby.wav")
+end
 
   -- create combat feedback text
   local feedback = bar:CreateFontString(guid.."feedback"..GetTime(), "OVERLAY", "NumberFontNormalHuge")
